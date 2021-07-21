@@ -16,9 +16,10 @@ render() {
                 <Navbar/>
                 <Switch>
                     <Route path="/" exact component={Home}/>
-                    <Route path="/cars" component={Cars}/>
-                    <Route path="/cars/:id" component={CarDetails}/>
-                    <Route path="/cars/add" component={AddCar}/>
+                    <Route path="/cars" exact component={Cars}/>
+                    <Route path="/cars/add"  component={AddCar}/>
+                    <Route path="/cars/:id"  component={CarDetails}/>
+
                 </Switch>
             </Router>
         </div>

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "devStart": "nodemon index.js"
+    "devStart": "nodemon index.js",
+    "client": "cd ../client && npm start",
+    "dev": "concurrently \"node index.js\" \"npm run client\""
   },
   "author": "Marin",
   "license": "ISC",

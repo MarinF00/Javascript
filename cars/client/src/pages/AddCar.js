@@ -1,14 +1,20 @@
 import React from "react";
+import Cars from "./Cars";
 
 class AddCar extends React.Component {
 
     render() {
         return(
             <div>
-                <form action="/cars" method="POST">
+                <h1>Form to add car</h1>
+                <form action="http://localhost:8080/cars" method="POST">
+                    <input type="number" placeholder="id" name="id" hidden="true"/>
                     <input type="text" placeholder="name" name="name"/>
-                        <input type="text" placeholder="quote" name="quote"/>
-                            <button type="submit">Submit</button>
+                        <input type="text" placeholder="model" name="model"/>
+                    <input type="number" placeholder="year" name="year"/>
+                    <input type="text" placeholder="color" name="color"/>
+                    <input type="number" placeholder="user_id" name="user_id"/>
+                            <button className="btn btn-primary btn-danger" type="submit">Submit</button>
                 </form>
             </div>
         )

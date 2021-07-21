@@ -14,7 +14,7 @@ class CarDetails extends React.Component {
 
     getCars = () =>
     {
-        axios.get("http://localhost:8080/carsd")
+        axios.get("http://localhost:8080/cars/:id")
             .then((response) => {
                 const data = response.data;
                 this.setState({cars: data})
@@ -39,7 +39,7 @@ class CarDetails extends React.Component {
     render() {
         return(
             <div>
-                <h1> Hello world</h1>
+                <h1>This Car Details</h1>
                 <div className="cars">
                     <h2>{this.displayCars(this.state.cars)}</h2>
                 </div>

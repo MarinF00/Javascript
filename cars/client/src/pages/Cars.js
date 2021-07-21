@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./Cars.css"
 
 class Cars extends React.Component {
     state = {
@@ -29,18 +30,22 @@ class Cars extends React.Component {
 
     displayCars = (cars) => {
         return cars.map((car, index) => (
-            <div key={index}>
-                <h1>{car.model}</h1>
+
+            <div className="cars"  key={index}>
+                <h1>{car.name}</h1>
+                <h2>{car.model}</h2>
                 <h2>{car.year}</h2>
+                <h2>{car.color}</h2>
+                <h2>{car.user_id}</h2>
             </div>
+
         ))
     }
 
     render() {
         return(
             <div>
-                <h1> Hello world</h1>
-                <div className="cars">
+                <div >
                     <h2>{this.displayCars(this.state.cars)}</h2>
                 </div>
             </div>

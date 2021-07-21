@@ -71,13 +71,14 @@ app.delete("/cars/:id", (req,res)=> {
 //Create and Update
 app.post("/cars", (req,res)=> {
     let emp = req.body;
+
     let sql = "SET @id = ?; SET @name = ?; SET @model = ?; SET @year = ?; SET @color = ?; SET @user_id = ?; CALL CarsAddOrEdit(@id,@name,@model,@year,@color,@user_id)";
 
     mySqlConnection.query(sql,[emp.id, emp.name, emp.model, emp.year, emp.color, emp.user_id], (err,rows, fields) => {
         if (!err)
             rows.forEach(element => {
                 if(element.constructor === Array)
-                    res.send('New Learner ID : '+ element[0]._id);
+                    res.send('New Car ID1 : ' + emp.name);
             });
         else
             console.log(err);
